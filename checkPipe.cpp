@@ -8,15 +8,14 @@
 
 using namespace std;
 
-int checkPipe(char **args)
+int checkPipe(char *args)
 {
 	int flag = 0;
 	for (int z=0;args[z]!=NULL;z++)
 		{
-			if (args[z] == "|")
+			if (args[z] == '|')
 			{
-				flag =1;
-				break;
+				flag ++;
 			}
 				// executePipe(args);
 		}
