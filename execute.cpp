@@ -10,22 +10,31 @@ using namespace std;
 
 void execute(string args[],int k)
 {
+  
   if (ShellMap.find(args[0]) != ShellMap.end())
   {
-    string ans = ShellMap[args[0]];
-    args[0] = ans;
-  }
+    string ans = ShellMap[args[0]]; 
 
-  // vector<char *> argv(args.size() + 1);    // one extra for the null
-    char *argv[k+1];int i=0;
-      for ( i = 0; i <k; ++i)
+    args[0] = ans;
+    
+  }
+  string s[100];int c= 0;
+    int k1 = rmspacedlmt(args[0], s);
+    char *argv[k+k1+1];int i=0;
+      for ( i = 0; i <k1; ++i)
       {
-           argv[i] = &args[i][0];
+           argv[c++] = &s[i][0];
       }
-      argv[i] = NULL;
+      // argv[i] = NULL;
+      // char *argv[k+1];int i=0;
+      for ( i = 1; i <k; ++i)
+      {
+           argv[c++] = &args[i][0];
+      }
+      argv[c++] = NULL;
       
-     //    for (int i=0;i<k;i++)
-     // cout<<"argv["<<i<<"] : "<<argv[i]<<endl;
+        for (int i=0;i<c;i++)
+     cout<<"argv["<<i<<"] : "<<argv[i]<<endl;
 
 
 

@@ -43,6 +43,8 @@ int main()
 			continue;
 
 		k = rmspacedlmt(line,args);
+		if(k==0)
+			continue;
 
 
 		if((args[0].compare("exit")) == 0)
@@ -53,7 +55,12 @@ int main()
 		 	string s[50],ans[50];
 		 	int x = dlmt(line,s,'=');
 		 	int k1 = rmspacedlmt(s[0],ans);
+		 	//cout<<ans[1]<<"\t"<<s[1]<<endl;
+
 		 	ShellMap [ans[1]] = s[1];
+		 	// cout<<"Printing map"<<endl;
+		 	// for(auto z=ShellMap.begin(); z!=ShellMap.end() ;z++)
+		 	// 	cout<<z->first<<"\t"<<z->second<<endl;
 			continue;
 		 }
 		 string s[50];int k1=0;

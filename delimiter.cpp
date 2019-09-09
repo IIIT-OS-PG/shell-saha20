@@ -14,7 +14,7 @@ for(int i=0;i<line.size();i++)
 		{
 			while ( (line[i] != ' ') && (line[i] != '\t')  && (i<line.size()))
 						args[k] += line[i++];
-			args[k] += '\0';
+			//args[k] += '\0';
 			k++;
 		}
 }
@@ -32,7 +32,7 @@ for(int i=0;i<line.size();i++)
 	{
 		while ((line[i] != d) && (i<line.size()))
 					args[k] += line[i++];
-		args[k] += '\0';
+	//	args[k] += '\0';
 		k++;
 	}
 }
